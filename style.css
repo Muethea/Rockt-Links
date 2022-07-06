@@ -1,33 +1,262 @@
-@font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?ne8y70');
-  src:  url('fonts/icomoon.eot?ne8y70#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?ne8y70') format('truetype'),
-    url('fonts/icomoon.woff?ne8y70') format('woff'),
-    url('fonts/icomoon.svg?ne8y70#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
+/*BASE*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html{
+  --bg-color: #edf2ff;
+  --text-color: #00082f;
 }
 
-.icon-brightness-up:before {
-  content: "\e901";
+body {
+  background: var(--bg-color);
+  transition: background 4s;
+  font-family: 'Roboto', sans-serif;
 }
-.icon-moon:before {
-  content: "\e900";
+
+a {
+  text-decoration: none;
+}
+ul {
+  margin: 3rem;
+  list-style: none;
+}
+
+.container {
+  margin: 4rem auto;
+  text-align: center;
+  width: 30rem;
+}
+
+img {
+  width: 100%;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  padding: 0.4rem;
+  border: 0.25rem #4263eb solid;
+}
+
+h1 {
+  color: #00082f;
+  font: 700 2rem 'Roboto', sans-serif;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font: 400 1.125rem 'Roboto Mono', monospace;
+  color: #00082f;
+  opacity: 0.8;
+  margin-bottom: 3rem;
+}
+ul li a {
+  border-radius: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.3rem;
+  background: #4263eb;
+  color: white;
+  text-transform: uppercase;
+  font: 400 1rem 'Roboto Mono', sans-serif;
+  transition: background 400ms;
+}
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+ul li a:hover {
+  background: #364fc7;
+}
+
+footer {
+  color: #00082f;
+  font: 500 0.75rem 'Roboto', sans-serif;
+  opacity: 0.6;
+  transition: opacity 400ms;
+}
+
+footer:hover {
+  opacity: 1;
+}
+
+footer a {
+  color: #00082f;
+}
+.show {
+  background: #00082f;
+}
+
+.show h1 {
+  color: white;
+  font: 700 2rem 'Roboto', sans-serif;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.show p {
+  font: 400 1.125rem 'Roboto Mono', monospace;
+  color: white;
+  opacity: 0.8;
+  margin-bottom: 3rem;
+}
+
+.show footer {
+  color: white;
+  font: 500 0.75rem 'Roboto', sans-serif;
+  opacity: 0.6;
+  transition: opacity 400ms;
+}
+
+.icon-brightness-up {
+  opacity: 0;
+  visibility: hidden;
+}
+.show .icon-moon {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.icon-moon {
+  display: flex;
+  margin-top: 1.5rem;
+  margin-right: 1.5rem;
+  justify-content: end;
+  font-size: 2rem;
+  cursor: pointer;
+}
+body.show .icon-brightness-up {
+  visibility: visible;
+  opacity: 1;
+  right: 1.5rem;
+  transition: 0.2s;
+  color: white;
+  display: flex;
+  margin-top: 1.5rem;
+  margin-right: 1.5rem;
+  justify-content: end;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+  body {
+    transition: background 4s;
+  }
+  .change-mod{
+    margin-right: 3rem;
+  }
+  h1 {
+    color: #00082f;
+    font: 700 2rem 'Roboto', sans-serif;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font: 400 1.125rem 'Roboto Mono', monospace;
+    color: #00082f;
+    opacity: 0.8;
+    margin-bottom: 3rem;
+  }
+  ul li a {
+    border-radius: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.3rem;
+    background: #4263eb;
+    color: white;
+    text-transform: uppercase;
+    font: 400 1rem 'Roboto Mono', sans-serif;
+    transition: background 400ms;
+  }
+  .grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  ul li a:hover {
+    background: #364fc7;
+  }
+
+  footer {
+    color: #00082f;
+    font: 500 0.75rem 'Roboto', sans-serif;
+    opacity: 0.6;
+    transition: opacity 400ms;
+  }
+
+  footer:hover {
+    opacity: 1;
+  }
+
+  footer a {
+    color: #00082f;
+  }
+  .show {
+    transition: background 4s;
+    background: #00082f;
+  }
+
+  .show h1 {
+    color: white;
+    font: 700 2rem 'Roboto', sans-serif;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .show .icon-moon {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .show p {
+    font: 400 1.125rem 'Roboto Mono', monospace;
+    color: white;
+    opacity: 0.8;
+    margin-bottom: 3rem;
+  }
+
+  .show footer {
+    color: white;
+    font: 500 0.75rem 'Roboto', sans-serif;
+    opacity: 0.6;
+    transition: opacity 400ms;
+  }
+
+  .icon-brightness-up {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .icon-moon {
+    transition: background 4s;
+    display: flex;
+    margin-top: .5rem;
+    margin-right: 1.5rem;
+    justify-content: end;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  body.show .icon-brightness-up {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.2s;
+    color: white;
+    display: flex;
+    margin-top: 1.5rem;
+    margin-right: 1.5rem;
+    justify-content: end;
+    font-size: 2rem;
+    cursor: pointer;
+  }
 }
